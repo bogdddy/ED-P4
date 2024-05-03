@@ -43,13 +43,15 @@ public class Persona implements Comparable<Persona>{
 
     ///////// NOVETAT!! /////////
 
-    // Falta implementar correctament aquest metode per a fer la comparacio de persones. La comparacio
-    // es fara per l'ID de les persones (no pel nom i congnom com es feia abans)
     public int compareTo(Persona p) {
+
+        return Integer.compare(this.getId_persona(), p.getId_persona());
+
     }
 
-    // Dues persones son iguals si tenen el mateix ID
-    public boolean equals(Persona p) {
+    public boolean equals(Object obj) {
+        if (!(obj instanceof Persona)) return false;
+        return this.id_persona == ((Persona) obj).getId_persona();
     }
 }
 
