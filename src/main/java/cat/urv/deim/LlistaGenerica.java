@@ -6,11 +6,11 @@ import cat.urv.deim.exceptions.ElementNoTrobat;
 
 public abstract class LlistaGenerica<E extends Comparable<E>> implements ILlistaGenerica<E>, Iterable<E> {
 
-    protected Node<E> fantasma;
+    protected NodeLlista<E> fantasma;
     protected int numElem;
 
     public LlistaGenerica() {
-        fantasma = new Node<E>(null);
+        fantasma = new NodeLlista<E>(null);
         numElem=0;
     }
 
@@ -43,9 +43,9 @@ public abstract class LlistaGenerica<E extends Comparable<E>> implements ILlista
 
     // Clase interna para implementar el iterador sobre la lista
     private class ListaGenericaIterator<T extends Comparable<T>> implements Iterator<T> {
-        private Node<T> current;
+        private NodeLlista<T> current;
 
-        public ListaGenericaIterator(Node<T> inicio) {
+        public ListaGenericaIterator(NodeLlista<T> inicio) {
             current = inicio;
         }
 

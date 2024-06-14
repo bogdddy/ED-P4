@@ -157,9 +157,9 @@ public class HashMapIndirecte<K extends Comparable<K> , V extends Comparable<V>>
     }
 
     @Override
-    public ILlistaGenerica<K> obtenirClaus() {
+    public LlistaGenerica<K> obtenirClaus() {
 
-        ILlistaGenerica<K> claus = new LlistaOrdenada<>();
+        LlistaGenerica<K> claus = new LlistaNoOrdenada<>();
 
         for (NodeHash<K, V> node : taula) {
             while (node != null) {

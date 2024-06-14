@@ -5,7 +5,7 @@ import cat.urv.deim.exceptions.PosicioForaRang;
 
 public class LlistaNoOrdenada<E extends Comparable<E>> extends LlistaGenerica<E> {
 
-    private Node<E> ultim;
+    private NodeLlista<E> ultim;
 
     public LlistaNoOrdenada() {
         super();
@@ -16,7 +16,7 @@ public class LlistaNoOrdenada<E extends Comparable<E>> extends LlistaGenerica<E>
     //Metode per insertar un element a la llista. No importa la posicio on s'afegeix l'element
     public void inserir(E e) {
 
-        Node<E> nouNode = new Node<E>(e);
+        NodeLlista<E> nouNode = new NodeLlista<E>(e);
 
         nouNode.anterior = ultim;
         ultim.seguent = nouNode;
@@ -29,7 +29,7 @@ public class LlistaNoOrdenada<E extends Comparable<E>> extends LlistaGenerica<E>
     //Metode per a esborrar un element de la llista
     public void esborrar(E e) throws ElementNoTrobat {
 
-        Node<E> n = this.fantasma.seguent;
+        NodeLlista<E> n = this.fantasma.seguent;
 
         int posicio = buscar(e);
 
@@ -49,7 +49,7 @@ public class LlistaNoOrdenada<E extends Comparable<E>> extends LlistaGenerica<E>
     //La primera dada esta a la posicio 0
     public E consultar(int pos) throws PosicioForaRang {
 
-        Node<E> n = fantasma.seguent;
+        NodeLlista<E> n = fantasma.seguent;
 
         if (pos < 0 || pos >= numElements())
             throw new PosicioForaRang();
@@ -64,7 +64,7 @@ public class LlistaNoOrdenada<E extends Comparable<E>> extends LlistaGenerica<E>
     //La primera dada esta a la posicio 0
     public int buscar(E e) throws ElementNoTrobat {
 
-        Node<E> n = fantasma.seguent;
+        NodeLlista<E> n = fantasma.seguent;
         int cont = 0;
 
         while (n != null) {

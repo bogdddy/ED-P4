@@ -9,7 +9,7 @@ import cat.urv.deim.exceptions.PosicioForaRang;
  */
 public class LlistaOrdenada<E extends Comparable<E>> extends LlistaGenerica<E> {
 
-    private Node<E> mig;
+    private NodeLlista<E> mig;
 
     public LlistaOrdenada() {
         super();
@@ -17,13 +17,13 @@ public class LlistaOrdenada<E extends Comparable<E>> extends LlistaGenerica<E> {
 
     //Metode per insertar un element a la llista. No importa la posicio on s'afegeix l'element
     public void inserir(E e) {
-        Node<E> nouNode = new Node<E>(e);
+        NodeLlista<E> nouNode = new NodeLlista<E>(e);
 
         if (esBuida()) {
             fantasma.seguent = nouNode;
             mig = nouNode;
         } else {
-            Node<E> actual = fantasma.seguent;
+            NodeLlista<E> actual = fantasma.seguent;
             boolean comp = e.compareTo(mig.element) < 0;
 
             while (actual.seguent != null && e.compareTo(actual.seguent.element) > 0) {
@@ -50,7 +50,7 @@ public class LlistaOrdenada<E extends Comparable<E>> extends LlistaGenerica<E> {
     //Metode per a esborrar un element de la llista
     public void esborrar(E e) throws ElementNoTrobat {
 
-        Node<E> n = fantasma.seguent;
+        NodeLlista<E> n = fantasma.seguent;
 
         while (n != null) {
             if (e.equals(n.element)){
@@ -75,7 +75,7 @@ public class LlistaOrdenada<E extends Comparable<E>> extends LlistaGenerica<E> {
         if (pos < 0 || pos >= numElements())
             throw new PosicioForaRang();
 
-        Node<E> actual;
+        NodeLlista<E> actual;
         if (pos <= numElem / 2) { // principi
             actual = fantasma.seguent;
             for (int i = 0; i < pos; i++) {
@@ -95,7 +95,7 @@ public class LlistaOrdenada<E extends Comparable<E>> extends LlistaGenerica<E> {
     //La primera dada esta a la posicio 0
     public int buscar(E e) throws ElementNoTrobat {
 
-        Node<E> n = fantasma.seguent;
+        NodeLlista<E> n = fantasma.seguent;
         int cont = 0;
 
         while (n != null) {
@@ -107,5 +107,7 @@ public class LlistaOrdenada<E extends Comparable<E>> extends LlistaGenerica<E> {
         throw new ElementNoTrobat();
 
     }
+
+
 
 }

@@ -93,8 +93,8 @@ public class GrafPersones {
         return graf.numVertex() == 0;
     }
 
-    public ILlistaGenerica<Integer> obtenirPersonesIDs() {
-        return graf.obtenirPersonesIDs();
+    public LlistaGenerica<Integer> obtenirPersonesIDs() {
+        return graf.obtenirVertexIDs();
     }
 
     // Metodes per a guardar amistats

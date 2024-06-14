@@ -1,29 +1,56 @@
 package cat.urv.deim;
 
-public class NodeGraf<K, V> {
+public class NodeGraf {
 
-    private K key;
-    private V value;
+    private NodeGraf segFila, segCol;
+    private int vertex1, vertex2;
+    private String etiq; // Etiqueta de la arista
 
-    public NodeGraf(K key, V value) {
-        this.key = key;
-        this.value = value;
+    public NodeGraf(int vertex1, int vertex2, String etiq) {
+        this.segFila = null;
+        this.segCol = null;
+        this.vertex1 = vertex1;
+        this.vertex2 = vertex2;
+        this.etiq = etiq;
     }
 
-    public K getKey() {
-        return key;
+    public NodeGraf getSegFila() {
+        return segFila;
     }
 
-    public void setKey(K key) {
-        this.key = key;
+    public NodeGraf getSegCol() {
+        return segCol;
     }
 
-    public V getValue() {
-        return value;
+    public int getVertex1() {
+        return vertex1;
     }
 
-    public void setValue(V value) {
-        this.value = value;
+    public int getVertex2() {
+        return vertex2;
     }
 
+    public String getEtiq() {
+        return etiq;
+    }
+
+    public void setSegFila(NodeGraf segFila) {
+        this.segFila = segFila;
+    }
+
+    public void setSegCol(NodeGraf segCol) {
+        this.segCol = segCol;
+    }
+
+    public void setVertex1(int vertex1) {
+        this.vertex1 = vertex1;
+    }
+
+    public void setVertex2(int vertex2) {
+        this.vertex2 = vertex2;
+    }
+
+    public void setEtiq(String etiq) {
+        this.etiq = etiq;
+    }
 }
