@@ -3,11 +3,11 @@ package cat.urv.deim;
 public class Vertex<V extends Comparable<V>, K, E extends Comparable<E>> implements Comparable<Vertex<V, K, E>> {
 
     private V value;
-    private LlistaGenerica<Aresta<K, E>> adjacencies;  // Utilizamos ILlistaGenerica para flexibilidad
+    private LlistaGenerica<Aresta<K, E>> adjacencies;
 
     public Vertex(V value) {
         this.value = value;
-        this.adjacencies = new LlistaNoOrdenada<>();  // Inicializamos la lista de adyacencias
+        this.adjacencies = new LlistaNoOrdenada<>();
     }
 
     public V getValue() {
